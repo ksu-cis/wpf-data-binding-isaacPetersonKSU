@@ -33,7 +33,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             
-            <Button Grid.Row="2">Add New Person</Button>
+            <Button Grid.Row="2" Click="Button_Click">Add New Person</Button>
         </Grid>
     </Border>
 

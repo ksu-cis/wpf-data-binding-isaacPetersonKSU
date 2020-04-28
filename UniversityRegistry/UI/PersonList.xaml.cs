@@ -37,5 +37,10 @@ namespace UniversityRegistry.UI
         {
             SelectionChanged?.Invoke(this, e);
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
