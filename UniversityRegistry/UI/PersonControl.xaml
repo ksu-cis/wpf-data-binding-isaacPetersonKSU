@@ -7,30 +7,29 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="400">
     
-    <UserControl.Resources>
-        <local:EnumToBoolConverter x:Key="enumToBoolConverter"/>
-    </UserControl.Resources>
-    
     <Border Padding="10">
         <StackPanel>
             <TextBlock FontSize="18">Personal Details</TextBlock>
 
-            <Label Content="ID"/>
+            <Label Content="_ID"/>
             <TextBlock Text="{Binding Path=ID}"/>
 
-            <Label Content="First Name"/>
+            <Label Content="_First Name" Target="{Binding ElementName=txtFirstName}"/>
             <TextBox Name="txtFirstName" Text="{Binding Path=FirstName}"/>
-            
-            <Label Content="Last Name"/>
+
+            <Label Content="_Last Name" Target="{Binding ElementName=txtLastName}"/>
             <TextBox Name="txtLastName" Text="{Binding Path=LastName}"/>
             
-            <Label Content="Date of Birth"/>
+            <Label Content="_Date of Birth" Target="{Binding ElementName=dpDateOfBirth}"/>
             <DatePicker Name="dpDateOfBirth" Text="{Binding Path=DateOfBirth}"/>
             
             <CheckBox Name="cbActive" Margin="0 10 0 0" IsChecked="{Binding Path=Active}">Active</CheckBox>
 
             <Label Content="Role"/>
-            
+            <RadioButton GroupName="Role" IsChecked="{Binding Path=IsUndergraduateStudent}">Undergraduate Student</RadioButton>
+            <RadioButton GroupName="Role" IsChecked="{Binding Path=IsGraduateStudent}">Undergraduate Student</RadioButton>
+            <RadioButton GroupName="Role" IsChecked="{Binding Path=IsFaculty}">Faculty</RadioButton>
+            <RadioButton GroupName="Role" IsChecked="{Binding Path=IsStaff}">Staff</RadioButton>
             
         </StackPanel>
     </Border>

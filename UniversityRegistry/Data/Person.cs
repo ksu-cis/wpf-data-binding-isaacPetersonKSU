@@ -137,7 +137,12 @@ namespace UniversityRegistry.Data
                 if (_role != value)
                 {
                     _role = value;
+
                     PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("Role"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsUndergraduateStudent"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsGraduateStudent"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsFaculty"));
+                    PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("IsStaff"));
                 }
             }
         }
@@ -157,6 +162,30 @@ namespace UniversityRegistry.Data
         public override string ToString()
         {
             return $"{LastName}, {FirstName} [{ID}]";
+        }
+
+        public bool IsUndergraduateStudent
+        {
+            get { return _role == Role.UndergraduateStudent; }
+            set { Role = Role.UndergraduateStudent; }
+        }
+
+        public bool IsGraduateStudent
+        {
+            get { return _role == Role.GraduateStudent; }
+            set { Role = Role.GraduateStudent; }
+        }
+
+        public bool IsFaculty
+        {
+            get { return _role == Role.Faculty; }
+            set { Role = Role.Faculty; }
+        }
+
+        public bool IsStaff
+        {
+            get { return _role == Role.Staff; }
+            set { Role = Role.Staff; }
         }
     }
 }
